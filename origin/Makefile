@@ -2,7 +2,7 @@
 
 
 CC = mpic++
-OPTS = -Wall -O2
+OPTS = -Wall -DCONCURRENT=0
 PROGS = mcint test_sob
 
 
@@ -23,4 +23,4 @@ clean:
 
 test:
 	./mcint -dim 12 -n 10000 -smooth 1 -seed 987654321
-
+	./test_sob -n 0
