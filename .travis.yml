@@ -1,0 +1,23 @@
+language: cpp
+sudo: required
+dist: trusty
+compiler: g++
+install: true
+before_script:
+    - g++ --version
+script:
+    - cd origin
+    - make clean
+    - make
+    - make test
+
+addons:
+  apt:
+    packages:
+    - g++-4.8
+    - gcc-4.8
+    - openmpi
+    sources:
+    - ubuntu-toolchain-r-test
+    - ubuntu-sdk-team
+ 
