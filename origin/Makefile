@@ -23,5 +23,4 @@ clean:
 
 test:
 	./mcint -dim 12 -n 10000 -smooth 1 -seed 987654321
-	./test_sob
 
