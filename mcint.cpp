@@ -9,10 +9,9 @@
 
 
 inline void sdrand(uint32_t seed);
-inline double drand();
 double integrand_discon(const std::valarray<double>& x);
 double integrand_smooth(const std::valarray<double>& x);
-double drand(const double x) { return drand(); }
+double drandMT();
 
 void setsobseq(std::valarray<double>& x);
 void setpseudo(std::valarray<double>& x);
@@ -36,7 +35,7 @@ void printUsageInfo(char* command, size_t dim, long int n, long int seed, bool s
 	std::cout << " Defaults: " << std::endl;
 	std::cout << " " << std::endl;
 	std::cout << "       " << command << " -dim " << dim << " -n " << n;
-	std::cout << " -smooth " << smoo;
+	std::cout << " -smooth " << (int)smoo;
 	std::cout << " -seed " << seed; 
 	std::cout << std::endl << std::endl;
 	return;
@@ -161,7 +160,7 @@ double integrand_smooth(const std::valarray<double>& x)
 static int highbit;
 
 double drandmask(double x) {
-	double xs = drand();
+	double xs = drandMT();
 	xs *= (1<<highbit);
 	xs = floor(xs);
 	xs /= (1<<highbit);
@@ -223,8 +222,8 @@ double drandMT();
 
 inline 
 void sdrand(uint32_t seed) { sdrandMT(seed); }
-inline 
-double drand() { return drandMT(); }
+//inline 
+//double drand() { return drandMT(); }
 
 //typedef unsigned long uint32;
 inline void seedMT(uint32_t seed);
