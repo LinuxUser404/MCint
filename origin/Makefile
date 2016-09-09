@@ -2,7 +2,7 @@
 
 
 CC = mpic++
-OPTS = -Wall -DCONCURRENT=0
+OPTS = -Wall -O2 -DCONCURRENT=0
 PROGS = mcint test_sob
 
 
