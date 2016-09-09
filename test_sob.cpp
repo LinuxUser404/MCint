@@ -3,14 +3,12 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <time.h>
-#include "mess.h" 
-#include "sobseq.h"
+#include "mess.hpp" 
+#include "sobseq.hpp"
 
 using namespace std;
 
 #define NOOP 0
-
-static int printevery = 1000000;
 
 #define SECS (1.0/(double)(CLOCKS_PER_SEC))
 
@@ -29,7 +27,6 @@ static int printevery = 1000000;
 
 extern double integrand(double *);
 extern double int_volume;
-static double mypi;
 
 static int myproc,nproc;
 
@@ -44,11 +41,10 @@ void sobseqbx(double *);
 
 int main(int argc, char *argv[])
 {
-    char buf[BUFSIZ];
-    int i,j,n,nloc,dim;
+    int i,j,dim;
     double q[DIM];
     double p[DIM];
-    double s,tt;
+    double s;
 
     double twc = clock()*SECS;
 

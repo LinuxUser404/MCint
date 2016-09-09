@@ -6,7 +6,6 @@ install: true
 before_script:
     - g++ --version
 script:
-    - cd origin
     - make clean
     - make
     - make test

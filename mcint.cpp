@@ -13,6 +13,8 @@ double integrand_discon(const std::valarray<double>& x);
 double integrand_smooth(const std::valarray<double>& x);
 double drandMT();
 
+void sobseq(double *, int, int);
+
 void setsobseq(std::valarray<double>& x);
 void setpseudo(std::valarray<double>& x);
 
@@ -179,12 +181,6 @@ void setpseudo(std::valarray<double>& x)
 	
 }
 
-bool cmp_frac(const double& a, const double& b) {           // increasing status 
-	return (a-int(a)<b-int(b));
-}
-
-
-void sobseq(double *, int, int);
 void sobseqb(double *, unsigned int, unsigned int, 
 			 unsigned int, unsigned int);
 
