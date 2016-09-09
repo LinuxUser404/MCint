@@ -143,7 +143,8 @@ double integrand_discon(const std::valarray<double>& x)
 
 double integrand_smooth(const std::valarray<double>& x)
 {
-	const double norm = 1.1687371345136332892; // square root of pi?
+	const double norm = 1.1687371345136332892;  // numeric value of 1d integral, a bit less than square root of pi,
+												// since integration is not from -inf to +inf
 	const size_t dimlast = x.size();
 	const double normfac = pow(norm, dimlast);
 
